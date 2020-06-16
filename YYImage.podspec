@@ -1,14 +1,13 @@
 Pod::Spec.new do |s|
-  s.name         = 'YYImage'
+  s.name         = 'YYImage_FixWarnings'
   s.summary      = 'Image framework for iOS to display/encode/decode animated WebP, APNG, GIF, and more.'
-  s.version      = '1.0.4'
+  s.version      = '1.0.5'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.authors      = { 'ibireme' => 'ibireme@gmail.com' }
-  s.social_media_url = 'http://blog.ibireme.com'
-  s.homepage     = 'https://github.com/ibireme/YYImage'
-  s.platform     = :ios, '6.0'
-  s.ios.deployment_target = '6.0'
-  s.source       = { :git => 'https://github.com/ibireme/YYImage.git', :tag => s.version.to_s }
+  s.authors      = { 'Sun' => 'holaux@gmail.com' }
+  s.homepage     = 'https://github.com/oneofai/YYImage'
+  s.platform     = :ios, '9.0'
+  s.ios.deployment_target = '9.0'
+  s.source       = { :git => 'https://github.com/oneofai/YYImage.git', :tag => s.version.to_s }
   
   s.requires_arc = true
   s.default_subspec = 'Core'
@@ -17,7 +16,7 @@ Pod::Spec.new do |s|
     core.source_files = 'YYImage/*.{h,m}'
     core.public_header_files = 'YYImage/*.{h}'
     core.libraries = 'z'
-    core.frameworks = 'UIKit', 'CoreFoundation', 'QuartzCore', 'AssetsLibrary', 'ImageIO', 'Accelerate', 'MobileCoreServices'
+    core.frameworks = 'UIKit', 'CoreFoundation', 'QuartzCore', 'AssetsLibrary', 'ImageIO', 'Accelerate', 'CoreServices'
   end
   
   s.subspec 'WebP' do |webp|
