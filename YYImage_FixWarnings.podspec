@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'YYImage_FixWarnings'
   s.summary      = 'Image framework for iOS to display/encode/decode animated WebP, APNG, GIF, and more.'
-  s.version      = '1.0.6'
+  s.version      = '1.0.7'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'Sun' => 'holaux@gmail.com' }
   s.homepage     = 'https://github.com/oneofai/YYImage'
