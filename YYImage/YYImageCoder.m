@@ -15,8 +15,8 @@
 #import <ImageIO/ImageIO.h>
 #import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
-#import <MobileCoreServices/MobileCoreServices.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreServices/CoreServices.h>
+#import <Photos/Photos.h>
 #import <objc/runtime.h>
 #import <pthread.h>
 #import <zlib.h>
@@ -2792,17 +2792,18 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     objc_setAssociatedObject(self, @selector(yy_isDecodedForDisplay), @(isDecodedForDisplay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)yy_saveToAlbumWithCompletionBlock:(void(^)(NSURL *assetURL, NSError *error))completionBlock {
+- (void)yy_saveToAlbumWithCompletionBlock:(void(^)(BOOL success, NSError *error))completionBlock {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *data = [self _yy_dataRepresentationForSystem:YES];
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error){
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageWithData:data]];
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
             if (!completionBlock) return;
             if (pthread_main_np()) {
-                completionBlock(assetURL, error);
+                completionBlock(success, error);
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    completionBlock(assetURL, error);
+                    completionBlock(success, error);
                 });
             }
         }];

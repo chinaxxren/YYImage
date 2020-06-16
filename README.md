@@ -185,7 +185,7 @@ You can also install documentation locally using [appledoc](https://github.com/t
 
 Requirements
 ==============
-This library requires `iOS 6.0+` and `Xcode 8.0+`.
+This library requires `iOS 9.0+` and `Xcode 11.0+`.
 
 
 License
@@ -378,7 +378,7 @@ A: 你应该禁用 Build Settings 中的 `Compress PNG Files` 和 `Remove Text M
 
 系统要求
 ==============
-该项目最低支持 `iOS 6.0` 和 `Xcode 8.0`。
+该项目最低支持 `iOS 9.0` 和 `Xcode 11.0`。
 
 
 许可证
