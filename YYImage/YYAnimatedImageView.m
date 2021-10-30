@@ -158,6 +158,7 @@ typedef NS_ENUM(NSUInteger, YYAnimatedImageType) {
 @end
 
 @implementation _YYAnimatedImageViewFetchOperation
+
 - (void)main {
     __strong YYAnimatedImageView *view = _view;
     if (!view) return;

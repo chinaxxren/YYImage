@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		825F0825272BF54B00173056 /* EmoticonQQ.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 825F0824272BF54B00173056 /* EmoticonQQ.bundle */; };
 		A43602FD25302C1E00C9A4D8 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97F40991F05740B00DFD481 /* WebP.framework */; };
 		A436030225302CA800C9A4D8 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A436030125302CA800C9A4D8 /* CoreServices.framework */; };
 		D91A60311F057230008CD5D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D91A60301F057230008CD5D3 /* AppDelegate.m */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		825F0824272BF54B00173056 /* EmoticonQQ.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EmoticonQQ.bundle; sourceTree = "<group>"; };
 		A436030125302CA800C9A4D8 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		D91A602C1F057230008CD5D3 /* YYImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91A602F1F057230008CD5D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YYImageDemo/AppDelegate.h; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		D9D17EAA1F0574E800051419 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				825F0824272BF54B00173056 /* EmoticonQQ.bundle */,
 				D9D17EAB1F05750000051419 /* cube@2x.png */,
 				D9D17EAC1F05750000051419 /* EmoticonWeibo.bundle */,
 				D9D17EAD1F05750000051419 /* google@2x.webp */,
@@ -321,6 +324,7 @@
 				D9D17EC31F05750000051419 /* nyancat@2x.webp in Resources */,
 				D9D17EBF1F05750000051419 /* mew_interlaced.gif in Resources */,
 				D9D17EC21F05750000051419 /* niconiconi@2x.gif in Resources */,
+				825F0825272BF54B00173056 /* EmoticonQQ.bundle in Resources */,
 				D9D17EBA1F05750000051419 /* EmoticonWeibo.bundle in Resources */,
 				D9D17EBB1F05750000051419 /* google@2x.webp in Resources */,
 			);
@@ -483,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D8RJFY6RH2;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Vendor\"";
 				INFOPLIST_FILE = YYImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -496,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D8RJFY6RH2;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Vendor\"";
 				INFOPLIST_FILE = YYImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

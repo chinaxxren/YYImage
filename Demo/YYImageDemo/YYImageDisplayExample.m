@@ -42,12 +42,12 @@
     
     [_scrollView addSubview:label];
     
-    [self addImageWithName:@"niconiconi" text:@"Animated GIF"];
-    [self addImageWithName:@"wall-e" text:@"Animated WebP"];
-    [self addImageWithName:@"pia" text:@"Animated PNG (APNG)"];
-    [self addFrameImageWithText:@"Frame Animation"];
-    [self addSpriteSheetImageWithText:@"Sprite Sheet Animation"];
-    
+//    [self addImageWithName:@"niconiconi" text:@"Animated GIF"];
+//    [self addImageWithName:@"wall-e" text:@"Animated WebP"];
+//    [self addImageWithName:@"pia" text:@"Animated PNG (APNG)"];
+//    [self addFrameImageWithText:@"Frame Animation"];
+//    [self addSpriteSheetImageWithText:@"Sprite Sheet Animation"];
+    [self addImage:@"gif image"];
     _scrollView.panGestureRecognizer.cancelsTouchesInView = YES;
 }
 
@@ -104,6 +104,34 @@
     YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
     
     if (size.width > 0 && size.height > 0) imageView.size = size;
+    imageView.centerX = self.view.width / 2;
+    imageView.top = [(UIView *)[_scrollView.subviews lastObject] bottom] + 30;
+    [_scrollView addSubview:imageView];
+    [YYImageExampleHelper addTapControlToAnimatedImageView:imageView];
+    [YYImageExampleHelper addPanControlToAnimatedImageView:imageView];
+    for (UIGestureRecognizer *g in imageView.gestureRecognizers) {
+        g.delegate = self;
+    }
+    
+    UILabel *imageLabel = [UILabel new];
+    imageLabel.backgroundColor = [UIColor clearColor];
+    imageLabel.frame = CGRectMake(0, 0, self.view.width, 20);
+    imageLabel.top = imageView.bottom + 10;
+    imageLabel.textAlignment = NSTextAlignmentCenter;
+    imageLabel.text = text;
+    [_scrollView addSubview:imageLabel];
+    
+    _scrollView.contentSize = CGSizeMake(self.view.width, imageLabel.bottom + 20);
+}
+
+
+- (void)addImage:(NSString *)text {
+    NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"EmoticonQQ.bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    bundlePath = [bundle pathForResource:@"003" ofType:@"gif"];
+    YYImage *image = (YYImage *) [YYImage imageWithContentsOfFile:bundlePath];
+    
+    YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
     imageView.centerX = self.view.width / 2;
     imageView.top = [(UIView *)[_scrollView.subviews lastObject] bottom] + 30;
     [_scrollView addSubview:imageView];
