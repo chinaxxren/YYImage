@@ -132,6 +132,7 @@
     YYImage *image = (YYImage *) [YYImage imageWithContentsOfFile:bundlePath];
     
     YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
+    imageView.totalLoop = 0;
     imageView.centerX = self.view.width / 2;
     imageView.top = [(UIView *)[_scrollView.subviews lastObject] bottom] + 30;
     [_scrollView addSubview:imageView];
