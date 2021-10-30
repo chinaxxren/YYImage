@@ -135,8 +135,7 @@ typedef NS_ENUM(NSUInteger, YYAnimatedImageType) {
     NSUInteger _totalFrameCount; ///< total frame count
     
     BOOL _loopEnd; ///< whether the loop is end.
-    NSUInteger _curLoop; ///< current loop count (from 0)
-    NSUInteger _totalLoop; ///< total loop count, 0 means infinity
+    NSUInteger _curLoop; ///< current loop count (from 0)    
     
     NSMutableDictionary *_buffer; ///< frame buffer
     BOOL _bufferMiss; ///< whether miss frame on last opportunity
